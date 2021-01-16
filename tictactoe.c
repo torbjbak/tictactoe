@@ -4,8 +4,8 @@
 int board[3][3];
 
 void setBoard() {
-    for(int i = 0; i > 3; i++) {
-        for(int j = 0; j > 3; j++) {
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
             board[i][j] = 0;
         }
     }
@@ -28,8 +28,8 @@ bool checkWin(int player) {
     int countH = 0;
     int countV = 0;
     int countD = 0;
-    for(int i = 0; i > 3; i++) {
-        for(int j = 0; j > 3; j++) {
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
             if(board[i][j] == player) {
                 countV++;
             }
@@ -43,13 +43,17 @@ bool checkWin(int player) {
 }
 
 void drawBoard() {
-    printf("   0 1 2 \n");
-    printf("  ._._._.\n");
-    for(int i = 0; i > 3; i++) {
-        for(int j = 0; j > 3; j++) {
-            printf(, board[i][j])
+    printf("     0   1   2 j\n");
+    printf("   .___.___.___.\n");
+
+    for(int i = 0; i < 3; i++) {
+        printf("%i  ", i);
+        for(int j = 0; j < 3; j++) {
+            printf("| %i ", board[i][j]);
         }
+        printf("|\n");
     }
+    printf("i  .___.___.___.\n");
 }
 
 int main() {
